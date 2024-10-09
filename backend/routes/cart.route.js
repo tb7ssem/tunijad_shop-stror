@@ -1,14 +1,15 @@
 import express from "express";
 import {
   addToCart,
+  getCartProducts,
   removeAllFromCart,
   updateQuantity,
-  getCartProducts,
 } from "../controllers/cart.controller.js";
-import { protectRoute } from "../middleware/auth.middleware.js"; // Correct the directory name here
+import { protectRoute } from "../middleware/auth.middleware.js";
+
 const router = express.Router();
 
-router.get("/", protectRoute, getCartProducts); // Corrected 'grt' to 'get'
+router.get("/", protectRoute, getCartProducts);
 router.post("/", protectRoute, addToCart);
 router.delete("/", protectRoute, removeAllFromCart);
 router.put("/:id", protectRoute, updateQuantity);

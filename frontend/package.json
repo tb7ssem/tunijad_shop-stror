@@ -10,8 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "cloudinary-core": "^2.13.1",
+    "cors": "^2.8.5",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "rollup-plugin-node-polyfills": "^0.2.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.11.1",

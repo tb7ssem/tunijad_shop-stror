@@ -8,7 +8,8 @@ export const getCoupon = async (req, res) => {
     });
     res.json(coupon || null);
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    console.log("Error in getCoupon controller", error.message);
+    res.status(500).json({ message: "Server error", error: error.message });
   }
 };
 
@@ -20,6 +21,7 @@ export const validateCoupon = async (req, res) => {
       userId: req.user._id,
       isActive: true,
     });
+
     if (!coupon) {
       return res.status(404).json({ message: "Coupon not found" });
     }
@@ -27,17 +29,16 @@ export const validateCoupon = async (req, res) => {
     if (coupon.expirationDate < new Date()) {
       coupon.isActive = false;
       await coupon.save();
-      return res.status(400).json({ message: "Coupon expired" });
+      return res.status(404).json({ message: "Coupon expired" });
     }
 
     res.json({
-      message: "Coupon validated",
+      message: "Coupon is valid",
+      code: coupon.code,
       discountPercentage: coupon.discountPercentage,
     });
   } catch (error) {
-    console.log("Error validating coupon", error.message);
-    res
-      .status(500)
-      .json({ message: "Internal server error", error: error.message });
+    console.log("Error in validateCoupon controller", error.message);
+    res.status(500).json({ message: "Server error", error: error.message });
   }
 };
