@@ -5,6 +5,7 @@ import SignUpPage from "./pages/SignUpPage";
 import LoginPage from "./pages/LoginPage";
 import AdminPage from "./pages/AdminPage";
 import CategoryPage from "./pages/CategoryPage";
+import Footer from "./components/Footer";
 
 import Navbar from "./components/Navbar";
 import { Toaster } from "react-hot-toast";
@@ -59,6 +60,7 @@ function App() {
 					/>
 					<Route path='/purchase-cancel' element={user ? <PurchaseCancelPage /> : <Navigate to='/login' />} />
 				</Routes>
+        <Footer />
 			</div>
 			<Toaster />
 		</div>
