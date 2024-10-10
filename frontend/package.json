@@ -11,10 +11,24 @@
   },
   "dependencies": {
     "cloudinary-core": "^2.13.1",
-    "cors": "^2.8.5",
+    
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "rollup-plugin-node-polyfills": "^0.2.1"
+    "rollup-plugin-node-polyfills": "^0.2.1",
+    
+    "lucide-react": "^0.447.0",
+
+    
+    "react-confetti": "^6.1.0",
+    "react-hot-toast": "^2.4.1",
+    "react-router-dom": "^6.26.2",
+    "recharts": "^2.12.7",
+    "framer-motion": "^11.11.1",
+
+    "zustand": "^5.0.0-rc.2",
+    
+    "@stripe/stripe-js": "^4.7.0",
+    "axios": "^1.7.7"
   },
   "devDependencies": {
     "@eslint/js": "^9.11.1",
